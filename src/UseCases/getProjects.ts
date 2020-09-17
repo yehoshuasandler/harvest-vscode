@@ -2,10 +2,9 @@ import axios from 'axios'
 import Harvest from '../Entities/Harvest'
 import ErrorMessage from '../Constants/ErrorMessageInterface'
 import ErrorMessages from '../Constants/ErrorMessages'
-import Project from '../Entities/Project'
 import ProjectInterface from '../Entities/Interfaces/ProjectInterface'
 
-const getProjects = async (): Promise<Project[] | ErrorMessage> => {
+const getProjects = async (): Promise<ProjectInterface[] | ErrorMessage> => {
   const harvest = new Harvest()
   let projectsResponse: any
   try {
@@ -18,7 +17,7 @@ const getProjects = async (): Promise<Project[] | ErrorMessage> => {
     return ErrorMessages[1]
   }
 
-  const projectData = projectsResponse.data.project_assignments.map((p: any) => {
+  const projects = projectsResponse.data.project_assignments.map((p: any) => {
     return {
       id: p.project.id,
       name: p.project.name,
@@ -30,10 +29,7 @@ const getProjects = async (): Promise<Project[] | ErrorMessage> => {
       })
     }
   })
-  
-  const projects = projectData.map((p: ProjectInterface) => {
-    return new Project(p)
-  })
+
   return projects
 }
 

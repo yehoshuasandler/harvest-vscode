@@ -16,6 +16,10 @@ class Harvest {
     return instance
   }
 
+  destructor (): void {
+    instance = null
+  }
+
   get headers () {
     return {
       'Harvest-Account-ID': this.accountId,

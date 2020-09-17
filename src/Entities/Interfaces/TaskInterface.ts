@@ -1,5 +1,5 @@
 interface TaskInterface {
-  id: string,
+  id: number,
   name: string
 }
 

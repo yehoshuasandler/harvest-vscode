@@ -1,7 +1,7 @@
 import TaskInterface from "./TaskInterface";
 
 interface ProjectInterface {
-  id: string,
+  id: number,
   name: string,
   tasks: TaskInterface[]
 }

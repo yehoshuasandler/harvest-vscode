@@ -8,16 +8,20 @@ class User {
   public readonly lastName: string
   public readonly email: string
   public readonly avatar: string
-  constructor (props: UserInterface) {
+  constructor (props?: UserInterface) {
     if (!instance) instance = this
 
-    this.id = props.id
-    this.firstName = props.firstName
-    this.lastName = props.lastName
-    this.email = props.email
-    this.avatar = props.avatar
+    this.id = props?.id || 0
+    this.firstName = props?.firstName || ''
+    this.lastName = props?.lastName || ''
+    this.email = props?.email || ''
+    this.avatar = props?.avatar || ''
     
     return instance
+  }
+
+  destructor (): void {
+    instance = null
   }
 
   get props (): UserInterface {

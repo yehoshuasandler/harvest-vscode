@@ -2,7 +2,7 @@ import ProjectInterface from './Interfaces/ProjectInterface'
 import TaskInterface from './Interfaces/TaskInterface'
 
 class Project {
-  public id: string
+  public id: number
   public name: string
   public tasks: TaskInterface[]
 

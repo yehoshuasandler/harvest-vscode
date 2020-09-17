@@ -10,6 +10,10 @@ class ProjectCollection {
     return instance
   }
 
+  destructor (): void {
+    instance = null
+  }
+
   addOne = (project: Project): void => {
     this.elements.push(project)
   }
@@ -20,7 +24,7 @@ class ProjectCollection {
     })
   }
 
-  findById = (id: string): Project | undefined => {
+  findById = (id: number): Project | undefined => {
     const project = this.elements.find((p: Project) => {
       return p.id === id
     })
