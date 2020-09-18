@@ -4,7 +4,7 @@ import ErrorMessage from '../Constants/ErrorMessageInterface'
 import ErrorMessages from '../Constants/ErrorMessages'
 import ProjectInterface from '../Entities/Interfaces/ProjectInterface'
 
-const getProjects = async (): Promise<ProjectInterface[] | ErrorMessage> => {
+const getProjectsAssignments = async (): Promise<ProjectInterface[] | ErrorMessage> => {
   const harvest = new Harvest()
   let projectsResponse: any
   try {
@@ -33,4 +33,4 @@ const getProjects = async (): Promise<ProjectInterface[] | ErrorMessage> => {
   return projects
 }
 
-export default getProjects
+export default getProjectsAssignments

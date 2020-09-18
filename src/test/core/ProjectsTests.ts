@@ -2,7 +2,7 @@ import ErrorMessage from "../../Constants/ErrorMessageInterface"
 import Harvest  from "../../Entities/Harvest"
 import ProjectInterface from "../../Entities/Interfaces/ProjectInterface"
 import Project from "../../Entities/Project"
-import getProjects from '../../UseCases/getProjects'
+import getProjectsAssignments from '../../UseCases/getProjectsAssignments'
 import env from '../env'
 import UnitTest from "../UnitTestInterface"
 
@@ -31,7 +31,7 @@ const projectCreateInstance = async (): Promise<boolean> => {
 }
 
 
-const getProjectsFromApi = async (): Promise<boolean> => {
+const getProjectsAssignmentsFromApi = async (): Promise<boolean> => {
   new Harvest().destructor()
 
   new Harvest({
@@ -42,7 +42,7 @@ const getProjectsFromApi = async (): Promise<boolean> => {
 
   const expectedOutput: ProjectInterface = env.firstProjectFromApi
 
-  const projects: ProjectInterface[] | ErrorMessage = await getProjects()
+  const projects: ProjectInterface[] | ErrorMessage = await getProjectsAssignments()
 
   if (!Array.isArray(projects)) return false
 
@@ -55,7 +55,7 @@ const getProjectsFromApi = async (): Promise<boolean> => {
 
 const unitTests: UnitTest[] = [
   { name: 'Entity | Project Create Instance', test: projectCreateInstance },
-  { name: 'Use Case | Get Projects From Api', test: getProjectsFromApi },
+  { name: 'Use Case | Get Projects From Api', test: getProjectsAssignmentsFromApi },
 ]
 
 export default unitTests
