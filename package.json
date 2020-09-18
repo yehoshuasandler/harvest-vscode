@@ -2,7 +2,9 @@
 	"name": "harvest-vscode",
 	"displayName": "harvest-vscode",
 	"description": "Varvest Integration to VS Code",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"publisher": "Tzedakah",
+	"repository": "https://github.com/joshuashoemaker/harvest-vscode",
 	"engines": {
 		"vscode": "^1.49.0"
 	},
@@ -10,14 +12,22 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:harvest-vscode.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "harvest-vscode.helloWorld",
-				"title": "Hello World"
+				"command": "harvest-vscode.punchTime",
+				"title": "Harvest: Punch Time"
+			},
+			{
+				"command": "harvest-vscode.login",
+				"title": "Harvest: Login"
+			},
+			{
+				"command": "harvest-vscode.logout",
+				"title": "Harvest: Logout"
 			}
 		]
 	},

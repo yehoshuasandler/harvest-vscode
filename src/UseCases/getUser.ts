@@ -1,10 +1,8 @@
 import axios from 'axios'
 import Harvest from '../Entities/Harvest'
-import ErrorMessage from '../Constants/ErrorMessageInterface'
-import ErrorMessages from '../Constants/ErrorMessages'
 import UserInterface from '../Entities/Interfaces/UserInterface'
 
-const getUser = async (): Promise<UserInterface | ErrorMessage> => {
+const getUser = async (): Promise<UserInterface> => {
   const harvest = new Harvest()
   let userResponse: any
   try {
@@ -14,15 +12,14 @@ const getUser = async (): Promise<UserInterface | ErrorMessage> => {
     )
   } catch (err) {
     console.log(err)
-    return ErrorMessages[0]
   }
 
   const user = {
-    id: userResponse.data.id || '',
-    firstName: userResponse.data.first_name || '',
-    lastName: userResponse.data.last_name || '',
-    email: userResponse.data.email || '',
-    avatar: userResponse.data.avatar_url || '',
+    id: userResponse?.data?.id || '',
+    firstName: userResponse?.data?.first_name || '',
+    lastName: userResponse?.data?.last_name || '',
+    email: userResponse?.data?.email || '',
+    avatar: userResponse?.data?.avatar_url || '',
   }
 
   return user
