@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import CurrentTimeEntry from "../../Entities/CurrentTimeEntry";
 import TaskInterface from "../../Entities/Interfaces/TaskInterface";
 import TimeEntryInterface from "../../Entities/Interfaces/TimeEntryInterface";
 import Project from "../../Entities/Project";
@@ -52,11 +53,6 @@ function PunchTime (context: vscode.ExtensionContext): vscode.Disposable {
       return t.name === selectedTaskName
     })
 
-    // console.log(selectedProject?.tasks[0])
-    // console.log(selectedProject?.tasks[1])
-    // console.log(selectedProject?.tasks[2])
-    console.log(selectedTask)
-
     const notes = await vscode.window.showInputBox({
       ignoreFocusOut: true,
       placeHolder: 'Notes'
@@ -74,11 +70,20 @@ function PunchTime (context: vscode.ExtensionContext): vscode.Disposable {
       notes: notes
     }
 
-    console.log(newTimeEntry)
-
     const saveNewTimeEntryResponse = await saveNewTimeEntry(newTimeEntry)
 
-    console.log(saveNewTimeEntryResponse)
+    const newTimeEntryId = saveNewTimeEntryResponse.id
+
+    const currentTimeEntry = new CurrentTimeEntry
+    currentTimeEntry.props = {
+      id: newTimeEntryId,
+      projectName: selectedProjectName,
+      taskName: selectedTaskName,
+      notes: notes
+    }
+
+    await context.globalState.update('currentTaskId', newTimeEntryId)
+    vscode.window.showInformationMessage(`${selectedProjectName} \n ${selectedTaskName} \n ${notes}`)
   })
 }
 

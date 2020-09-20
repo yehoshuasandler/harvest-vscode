@@ -28,6 +28,10 @@
 			{
 				"command": "harvest-vscode.logout",
 				"title": "Harvest: Logout"
+			},
+			{
+				"command": "harvest-vscode.stopTimer",
+				"title": "Harvest: Stop Timer"
 			}
 		]
 	},
