@@ -38,3 +38,5 @@ class ProjectCollection {
     return project
   }
 }
+
+export default ProjectCollection
