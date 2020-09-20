@@ -1,15 +1,20 @@
 {
 	"name": "harvest-vscode",
-	"displayName": "harvest-vscode",
-	"description": "Varvest Integration to VS Code",
+	"displayName": "Harvest Time Tracker",
+	"description": "Harvest Integration to VS Code",
 	"version": "0.1.0",
 	"publisher": "Tzedakah",
 	"repository": "https://github.com/joshuashoemaker/harvest-vscode",
+	"icon": "harvestLogo.png",
 	"engines": {
 		"vscode": "^1.49.0"
 	},
 	"categories": [
 		"Other"
+	],
+	"keywords": [
+		"Project Management",
+		"time tracker"
 	],
 	"activationEvents": [
 		"*"

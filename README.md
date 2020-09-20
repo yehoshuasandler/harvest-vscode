@@ -1,65 +1,31 @@
-# harvest-vscode README
+# <a href="https://github.com/joshuashoemaker/harvest-vscode"> <img alt="brightScreen" src="./harvestLogo.png" width="26px" /> Harvest TimeTracker for Vs Code </a>
 
-This is the README for your extension "harvest-vscode". After writing up a brief description, we recommend including the following sections.
+This extension is maintained by me not Harvest so please:
+[🧡 Support this Extension 🧡](https://github.com/sponsors/joshuashoemaker/)
 
-## Features
+Harvest is a very popular labor and expense tracker that I use at work. I was bothered by constantly having to switch apps and context to make sure I was properly tracking my coding labor. I made this extension so I never have to leave VS Code and interupt my flow of thought. I hope several others will find this convenient time saver userful.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Authorization
 
-For example if there is an image subfolder under your extension project workspace:
+You will need to get yourself the User Id of your account and you will need to generate a personal Access Token [by going here!](https://id.getharvest.com/developers)
 
-\!\[feature X\]\(images/feature-x.png\)
+## UI
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+In the botton right of VS Code you will find the label `Harvest'. Clicking this will open simple drop down menus leting you choose your project and task, then adding notes to you time entry.
 
-## Requirements
+## Commands
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+All commands are accessible through `Ctrl-p`. Punching Time can be run by clicking the `Harvest` label in the bottom right
 
-## Extension Settings
+### Login
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+When running the login command you will be asked to enter your `User Id` and your `Personal Access Token`. This will save to your extention setttings and will not need to be entered again unless you log out.
 
-For example:
+### Logout
 
-This extension contributes the following settings:
+Running Logout will properly removed your stored `User Id` and `Personal Access Token`
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+### Punch Time
 
-## Known Issues
+This command can be run by clicking the label `Harvest` in the bottom right or by searching with `Ctrl-p`
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
